@@ -1,0 +1,10 @@
+{
+  "request": {
+	"method": "ANY",
+	"urlPattern": "/postman/.*"
+  },
+  "response": {
+	"proxyBaseUrl": "https://postman-echo.com",
+	"proxyUrlPrefixToRemove": "/postman"
+  }
+}

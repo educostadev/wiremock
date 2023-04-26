@@ -1,0 +1,11 @@
+{
+    "request":{
+	"method": "ANY",
+        "urlPattern": "/echo(.*)"
+    },
+    "response": {
+	"status": 200,
+        "body": "### Sucess!  ###",
+        "transformers": ["response-template"]
+    }
+}

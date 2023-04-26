@@ -1,0 +1,20 @@
+version: '2.1'
+services:
+   wiremock:
+     image: wiremock/wiremock:2.35.0
+     ports:
+       - 8086:8080
+       - 8443:8443
+     volumes:
+       - ./data/wiremock-helper/files:/home/wiremock/__files
+       - ./data/wiremock-helper/mappings:/home/wiremock/mappings
+     command: "--https-port 8443 --verbose --global-response-templating"
+   wiremock-recording:
+     image: wiremock/wiremock:2.35.0
+     ports:
+       - 8086:8080
+       - 8443:8443
+     volumes:
+       - ./data/wiremock-recording/files:/home/wiremock/__files
+       - ./data/wiremock-recording/mappings:/home/wiremock/mappings
+     command: "--verbose --global-response-templating --record-mappings"

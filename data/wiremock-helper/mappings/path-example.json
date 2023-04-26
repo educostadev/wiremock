@@ -1,0 +1,18 @@
+{
+    "request":{
+		"method": "GET",
+        "urlPathPattern": "/example/v1/[A-Z]*/[A-Z]*"
+    },
+    "response": {
+		"status": 200,
+        "jsonBody": {	
+		  "firstParam": "{{request.path.[2]}}",
+		  "secondParam": "{{request.path.[3]}}",
+		  "fixedValue":60
+		},
+        "transformers": ["response-template"],
+		"headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}
